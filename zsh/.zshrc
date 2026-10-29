@@ -113,9 +113,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# cd home if wsl, otherwise add cowsay to path in devcontainer
+# Go home if wsl, otherwise add cowsay fun to path in devcontainer
 if [[ ! -d /workspaces ]]; then
     cd ~
 else
     export PATH="$PATH:/usr/games"
+fi
+
+# Source workspace .venv if present
+if [[ -z "$VIRTUAL_ENV" && -f "./.venv/bin/activate" ]]; then
+    source "./.venv/bin/activate"
 fi
