@@ -76,6 +76,7 @@ ZSH_CUSTOM="$HOME/.zsh/custom"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    hitchhiker
     safe-paste
     zsh-syntax-highlighting
     zsh-autosuggestions
