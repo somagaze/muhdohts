@@ -113,5 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My custom entries
-cd ~
+# cd home if wsl, otherwise add cowsay to path in devcontainer
+if [[ ! -d /workspaces ]]; then
+    cd ~
+else
+    export PATH="$PATH:/usr/games"
+fi
